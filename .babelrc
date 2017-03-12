@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          "Edge >= 14",
+          "Firefox >= 51",
+          "Chrome >= 51",
+          "Opera >= 36",
+          "Safari >= 10"
+        ]
+      }
+    }],
+    "react"      
+  ]
+}
