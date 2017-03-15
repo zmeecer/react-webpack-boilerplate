@@ -1,18 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from './components/App';
-import Home from './components/Home';
+import 'babel-polyfill';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import MyAlarms from './containers/MyAlarms';
+import GlobalAddAlarm from './containers/GlobalAddAlarm';
 import About from './components/About';
 
 function bootstrap() {
   ReactDOM.render(
     <Router>
-      <App>
-        <Route exact path="/" component={Home} />
-        <Route path="/home" component={Home} />
+      <div>
+        <ul>
+          <li><Link to="/">Alarms</Link></li>
+          <li><Link to="/about">About</Link></li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={MyAlarms} />
         <Route path="/about" component={About} />
-      </App>
+
+        <GlobalAddAlarm />
+      </div>
     </Router>,
     document.getElementById('app'),
   );

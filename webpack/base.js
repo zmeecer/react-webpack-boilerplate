@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   entry: {
     bundle: './src/index',
-    react: ['react', 'react-dom', 'react-router', 'react-redux', 'redux'],
+    react: ['react', 'react-dom', 'react-router-dom', 'react-redux', 'redux'],
     vendors: ['axios', 'lodash', 'moment'],
   },
   resolve: {
