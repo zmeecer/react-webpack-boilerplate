@@ -1,0 +1,33 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          "Edge >= 14",
+          "Firefox >= 51",
+          "Chrome >= 51",
+          "Opera >= 36",
+          "Safari >= 10"
+        ]
+      },
+      "modules": false,
+      "loose": true
+    }],
+    "react"      
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "babili"
+      ]
+    },
+    "test": {
+      // bacause of earlier we disable transformation of es2015 modules (needed for jest)
+      "presets": ["env"]
+    }
+  }
+}
