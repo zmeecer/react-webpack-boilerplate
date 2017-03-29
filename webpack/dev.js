@@ -20,8 +20,7 @@ const webpackConfig = Object.assign({}, config, {
         test: /\.s?css$/,
         use: [
           'style-loader',
-          'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]',
-          'sass-loader',
+          'css-loader?sourceMap',
         ],
       },
     ],

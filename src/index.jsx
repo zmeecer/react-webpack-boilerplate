@@ -1,30 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'babel-polyfill';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import MyAlarms from './containers/MyAlarms';
-import GlobalAddAlarm from './containers/GlobalAddAlarm';
-import About from './components/About';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import App from './components/App';
+import './index.css';
 
-function bootstrap() {
-  ReactDOM.render(
-    <Router>
-      <div>
-        <ul>
-          <li><Link to="/">Alarms</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
-        <hr />
-
-        <Route exact path="/" component={MyAlarms} />
-        <Route path="/about" component={About} />
-
-        <GlobalAddAlarm />
-      </div>
-    </Router>,
-    document.getElementById('app'),
-  );
-}
-
-bootstrap();
+ReactDOM.render(
+  <App />,
+  document.getElementById('root'),
+);
